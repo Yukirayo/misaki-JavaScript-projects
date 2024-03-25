@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="110" height="150" viewBox="0 0 110 150" fill="none">
+<rect x="0" y="0" width="110" height="149.99999999999997"   fill="#FFFFFF" >
+</rect>
+<rect x="5" y="5" width="100" height="140"   fill="#000000" >
+</rect>
+<rect x="10" y="10" width="90" height="130"   fill="#FF0000" >
+</rect>
+<path d="M97 45L97 13L65 13L97 45Z"   fill="#000000" >
+</path>
+<path d="M65 137L97.0001 137L97.0001 105L65 137Z"   fill="#000000" >
+</path>
+<path d="M13 105L13 137L45 137L13 105Z"   fill="#000000" >
+</path>
+<path d="M44.9999 12.9999L12.9999 12.9999L12.9999 45L44.9999 12.9999Z"   fill="#000000" >
+</path>
+<circle cx="55.5" cy="75.5" r="35.5"   fill="#000000" >
+</circle>
+<circle cx="56" cy="76" r="25"   fill="#FF0000" >
+</circle>
+<circle cx="55.5" cy="75.5" r="17.5"   fill="#000000" >
+</circle>
+<circle cx="55.5" cy="75.5" r="11.5"   fill="#FF0000" >
+</circle>
+</svg>

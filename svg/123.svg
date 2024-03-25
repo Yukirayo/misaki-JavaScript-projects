@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="168" viewBox="0 0 128 168" fill="none">
+<g filter="url(#filter_0)">
+<rect x="4" y="2" width="120" height="160"   fill="#FFFFFF" >
+</rect>
+</g>
+<rect x="14" y="12" width="100" height="140"   fill="#000000" >
+</rect>
+<rect x="19" y="17" width="90" height="130"   fill="#FF0000" >
+</rect>
+<path d="M106 52L106 20L74 20L106 52Z"   fill="#000000" >
+</path>
+<path d="M74 144L106 144L106 112L74 144Z"   fill="#000000" >
+</path>
+<path d="M22 112L22 144L54 144L22 112Z"   fill="#000000" >
+</path>
+<path d="M53.9999 19.9999L21.9999 19.9999L21.9999 52L53.9999 19.9999Z"   fill="#000000" >
+</path>
+<circle cx="64.5" cy="82.5" r="35.5"   fill="#000000" >
+</circle>
+<circle cx="65" cy="83" r="25"   fill="#FF0000" >
+</circle>
+<circle cx="64.5" cy="82.5" r="17.5"   fill="#000000" >
+</circle>
+<circle cx="64.5" cy="82.5" r="11.5"   fill="#FF0000" >
+</circle>
+<defs>
+<filter id="filter_0" x="0" y="0" width="128" height="168" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="feFloodId_0"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha_0"/>
+<feOffset dx="0" dy="2"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha_0" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="" in2="feFloodId_0" result="dropShadow_1_0"/>
+<feBlend mode="normal" in="SourceGraphic" in2="dropShadow_1_0" result="shape_0"/>
+</filter>
+</defs>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="60">
+    <defs>
+        <filter id="drop-shadow" x="-20%" y="-40%" width="200%" height="200%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+          <feOffset dx="4" dy="4" result="offsetblur" />
+          <feFlood flood-color="rgba(0,0,0,0.5)" />
+          <feComposite in2="offsetblur" operator="in" />
+          <feMerge>
+            <feMergeNode />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+    <path d="M 0 20 L 40 0 L 40 15 L 60 20 L 250 18 L 240 50 L 60 50 L 55 40 L 40 25 L 40 20 Z" fill="white" filter="url(#drop-shadow)" />
+    <text x="150" y="40" font-size="17" font-family="Arial" font-weight="bolder" letter-spacing="3" text-anchor="middle" fill="black">确认发送预告信？</text>
+</svg>
