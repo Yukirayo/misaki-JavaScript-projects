@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>总导航</title>
+</head>
+<style>
+    :root {
+        --move-distance: 0px;
+    }
+
+    body {
+        scrollbar-width: 0;
+        user-select: none;
+        height: 100vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+        background-image: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
+        background-repeat: no-repeat;
+    }
+
+    .cover {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .container {
+        margin-left: 100px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        gap: 100px;
+        transition: .5s;
+        transform: translateX(var(--move-distance));
+    }
+
+    .item-container:nth-child(1) {
+        margin-left: 200px;
+    }
+
+    .item-container {
+        background-size: cover;
+        border-radius: 15px;
+        transition: .6s;
+    }
+
+    .item {
+        transform-style: preserve-3d;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        width: 300px;
+        height: 500px;
+        background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+        background-clip: text;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 600;
+        color: transparent;
+    }
+</style>
+
+<body>
+    <div class="container"></div>
+    <div class="cover"></div>
+</body>
+<script>
+    const position = {
+        movedistance: {
+            x: 0,
+            y: 0
+        },
+        mouseup: {
+            x: 0,
+            y: 0
+        },
+        mousedown: {
+            x: 0,
+            y: 0
+        }
+    }
+    const cover = document.querySelector('.cover');
+    const container = document.querySelector('.container');
+    let rotateStatus = false
+    let distance = 0
+    const lists = [
+        { id: 1, front: '卡片翻转', back: '', url: '../01-卡片翻转/index.html' },
+        { id: 2, front: '卡片组上浮', back: '', url: '../02-卡片组波纹状上浮/index.html' },
+        { id: 3, front: '打字效果', back: '', url: '../03-打字效果/index.html' },
+        { id: 4, front: '动画下划线', back: '', url: '../04-文字动画下划线/index.html' },
+        { id: 5, front: '女神异闻录', back: '', url: '../05-女神异闻录交互/index.html' },
+        { id: 6, front: '视差滚动', back: '', url: '../06-视差滚动/index.html' },
+        { id: 7, front: '进度条-直', back: '', url: '../07-进度条-直/index.html' },
+        { id: 8, front: '进度条-圆', back: '', url: '../08-进度条-圆/index.html' },
+        { id: 9, front: '轮盘展示', back: '', url: '../09-轮盘展示/index.html' },
+        { id: 10, front: '节流显示', back: '', url: '../10-内容节流显示/index.html' },
+        { id: 11, front: '接球小游戏', back: '', url: '../11-接球小游戏/index.html' },
+    ]
+    //遍历对象创建item元素
+    for (let i = 0; i < lists.length; i++) {
+        console.log(`./assets/cover-img/${lists[i].id}.png`);
+        container.innerHTML += `
+        <div class="item-container" style="background-image: url(./assets/cover-img/${lists[i].id}.png);">
+            <div class="item">
+                <div class="front"><span>${lists[i].front}</span></div>
+                <div class="back"></div>
+            </div>
+        </div>
+        `
+    }
+
+
+    //拉动item内容区
+    //mouseup事件回调方法
+    const mouseupHandler = (e) => {
+        position.mouseup.x = e.clientX
+        position.mouseup.y = e.clientY
+        moveItems(computedMoveDistance())
+    }
+    //mousedown事件回调方法
+    const mousedownHandler = (e) => {
+        position.mousedown.x = e.clientX
+        position.mousedown.y = e.clientY
+    }
+    //计算拉动距离，判断方向
+    const computedMoveDistance = () => {
+        position.movedistance.x = position.mouseup.x - position.mousedown.x
+        position.movedistance.y = position.mouseup.y - position.mousedown.y
+        if (position.movedistance.x > 0) {
+            return 'right'
+        } else {
+            return 'left'
+        }
+    }
+    //移动item-container
+    const moveItems = (direction) => {
+        if (direction === 'right') {
+            distance = getComputedStyle(container).getPropertyValue('--move-distance')
+            rotateItems()
+            container.style.setProperty('--move-distance', `${parseInt(distance) + 400}px`)
+        } else if (direction === 'left') {
+            distance = getComputedStyle(container).getPropertyValue('--move-distance')
+            rotateItems()
+            container.style.setProperty('--move-distance', `${parseInt(distance) - 400}px`)
+        }
+    }
+
+    //旋转item
+    const rotateItems = () => {
+        const itemContainers = document.querySelectorAll('.item-container');
+        itemContainers.forEach((item, index) => {
+            if (rotateStatus) {
+                console.log(1);
+                if (index % 2 === 0) {
+                    item.style.transform = 'perspective(500px) rotateY(10deg)';
+                } else {
+                    item.style.transform = 'perspective(500px) rotateY(-10deg)';
+                }
+            } else {
+                console.log(2);
+                if (index % 2 === 0) {
+                    item.style.transform = 'perspective(500px) rotateY(-10deg)';
+                } else {
+                    item.style.transform = 'perspective(500px) rotateY(10deg)';
+                }
+            }
+        })
+        rotateStatus = !rotateStatus
+    }
+
+    //监听器
+    document.addEventListener('mouseup', mouseupHandler)
+    document.addEventListener('mousedown', mousedownHandler)
+
+    //等待元素添加完毕，执行每个item的动画
+    setTimeout(() => {
+        const itemContainers = document.querySelectorAll('.item-container');
+        rotateItems()
+        itemContainers.forEach((item,index) => {
+            item.addEventListener('click', () => {
+                window.open(lists[index].url)
+            })
+        })
+    }, 500)
+</script>
+
+</html>

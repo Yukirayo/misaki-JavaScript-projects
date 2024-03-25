@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>卡片组波纹状上浮</title>
+</head>
+<script src="../lodash.js"></script>
+<style>
+body{
+    overflow: hidden;
+    background-image: linear-gradient(to right, #fff1eb, #ace0f9);
+}
+
+.btn{
+    display: block;
+    margin: 0 auto;
+}
+
+.container {
+    margin: 200px auto; 
+    width: auto;
+    height: 400px;
+}
+
+.cards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.card {
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    text-align: center;
+    line-height: 300px;
+    font-size: 50px;
+    font-weight: bolder;
+    border-radius: 15px;
+/*    background-color: rgba(165, 221, 155,0.8);*/
+  /*   background-color: rgba(255, 255, 255,0.9);*/
+  background-size: cover;
+    width: 240px;
+    height: 360px;
+    transform-style: preserve-3d;
+    transform: rotateY(30deg) translateY(800px);
+    margin: 0 -100px;
+    opacity: 0.9;
+}
+
+.card:hover {
+    transform: translateY(-40px) rotateY(30deg)  translateZ(40px); 
+}
+</style>
+<body>
+    <div class="container">
+        <div class="cards">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </div>
+</body>
+<script>
+    const btn = document.querySelector('.btn');
+    const cards = document.querySelectorAll('.card');
+    let timer
+
+    for(let i=0;i<cards.length;i++){
+        cards[i].style.backgroundImage = `url("./assets/${i+1}.jpg")`
+    }
+
+
+    const cardsElevator = () => {
+        for(let i=0;i<cards.length;i++){
+            cards[i].style.transition = `${0.5+i*0.05}s`
+            cards[i].style.transform = `scale(0.9) rotateY(30deg) translateY(${i*10}px)`
+            cards[i].addEventListener('mouseenter',()=>cards[i].style.transform = `scale(0.9) translateY(${-100+i*10}px) rotateY(30deg)  translateZ(40px)`)
+            cards[i].addEventListener('mouseleave',()=>cards[i].style.transform = `scale(0.9) rotateY(30deg) translateY(${i*10}px)`)
+        }
+        setTimeout(()=>cards.forEach(card=>card.style.transition = `0.6s`),1000)
+    }
+    setTimeout(()=>cardsElevator(),500)
+    
+</script>
+</html>

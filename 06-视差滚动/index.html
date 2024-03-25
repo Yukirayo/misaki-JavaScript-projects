@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视差滚动</title>
+</head>
+<style>
+    ::-webkit-scrollbar{
+        width: 0;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .cover{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.0);
+        z-index: 2;
+    }
+    .image-container{
+        margin: 0 auto;
+        overflow: auto;
+        width: 1200px;
+        height: 600px;
+        background: no-repeat center;
+        transition: .5s;
+    }
+    .image{
+        width: 100%;
+        height: 1600px;
+        background: no-repeat center/cover;
+        transition: .5s;
+
+    }
+</style>
+
+<body>
+    <div class="cover"></div>
+    <div class="image-container">
+        <div class="image"></div>
+    </div>
+    <div class="image-container">
+        <div class="image"></div>
+    </div>
+    <div class="image-container">
+        <div class="image"></div>
+    </div>
+    <div class="image-container">
+        <div class="image"></div>
+    </div>
+    <div class="image-container">
+        <div class="image"></div>
+    </div>
+</body>
+<script>
+    const image = document.querySelectorAll('.image');
+    const imageContainer = document.querySelectorAll('.image-container');
+    const body = document.querySelector('body');
+    let previousScrollTop = 0
+    let timer
+    let status
+
+    window.onload = function() {
+        window.scrollTo(0, 0);
+    }
+
+    for (let i = 0; i < image.length; i++) {
+        image[i].style.backgroundImage = `url("../02-卡片组波纹状上浮/assets/${i+1}.jpg")`
+    }
+
+    const scrollDirect = () => {
+        if(window.scrollY - previousScrollTop > 0){
+            previousScrollTop = window.scrollY
+            return 'down'
+        }else if(window.scrollY - previousScrollTop < 0){
+            previousScrollTop = window.scrollY
+            return 'up'
+        }
+    }
+
+    const scrollAll = () => {
+        status = scrollDirect()
+        if(timer){
+            timer = null
+            scrollAll()
+        }else{
+            setTimeout(() => {
+                imageContainer.forEach((item,index)=>{
+                    item.scrollIntoView({
+                        behavior: 'smooth'
+                    })
+                    if(status === 'up'){
+                        item.scrollTop = item.scrollTop - 5;
+                    }else if(status === 'down'){
+                        item.scrollTop = item.scrollTop + 5;
+                    }
+                })
+            },200)
+        }
+    }
+
+    window.addEventListener('scroll', scrollAll)
+
+    
+</script>
+</html>

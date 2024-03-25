@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打字效果</title>
+</head>
+<style>
+    body{
+        background-color: #333;
+    }
+    .container {
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+    }
+    .sentence {
+        word-wrap: break-word;
+        text-align: center;
+        font-size: 32px;
+        line-height: 80px;
+        font-weight: bolder;
+        color: rgb(188, 233, 176);
+        border-radius: 15px;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="sentence">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus id earum error porro perspiciatis fugit voluptatum corrupti sint soluta illum sequi suscipit cum, consequatur culpa neque vero! Praesentium error beatae, adipisci nihil culpa vero, facere dolore quos consequatur accusantium perferendis, illo voluptatum officiis deserunt magni veniam. Sint vel ipsum hic delectus perferendis rerum deleniti aperiam qui enim. Sapiente dolor nam magnam ullam quaerat adipisci quasi repellat nisi similique iste, vero nulla rerum illum minima cupiditate voluptate consequatur molestiae harum libero, quam incidunt! Quidem atque, ad aperiam quis vitae numquam cum laboriosam quo quod eligendi veniam sequi fugit, nisi eos hic?</div>
+    </div>
+</body>
+<script>
+const sentence = document.querySelector('.sentence')
+const sentenceText = sentence.innerHTML
+let textArr = sentenceText.split('')
+let index = 0
+let timer
+sentence.innerHTML = ''
+setTimeout(()=>{
+    timer = setInterval(()=>{
+        if(index >= textArr.length){
+            clearInterval(timer)
+        }else if(index < textArr.length && textArr[index]===' '){
+            sentence.innerHTML += ' '
+        }else{
+            sentence.innerHTML += textArr[index]
+        }
+        index++
+    },100)
+},500)
+
+</script>
+</html>

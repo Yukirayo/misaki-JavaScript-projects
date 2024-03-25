@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮盘展示</title>
+</head>
+<style>
+    *{
+        user-select: none;
+    }
+    body {
+        overflow: hidden;
+        background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    }
+    .container {
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .container .wheel {
+        border-radius: 50%;
+        transform-origin: center;
+        transform: scale(3.6) translateY(32%);
+        transition: 1s;
+        -webkit-user-drag: none;
+    }
+
+    .container .pointer {
+        position: absolute;
+        bottom: -65%;
+        width: 100%;
+        height: 100%;
+        transition: 2s;
+        -webkit-user-drag: none;
+    }
+
+/*    .container img:hover {
+        transform: scale(3.6) translateY(32%) rotate(360deg);
+    }
+    */
+</style>
+<body>
+    <div class="container">
+        <img class="wheel" src="./assets/轮盘.svg" alt="">
+        <img class="pointer" src="./assets/指针.svg" alt="">
+    </div>
+</body>
+<script>
+    const wheel = document.querySelector('.wheel')
+    let mousemovePosition = {
+        x: 0,
+        y: 0
+    }
+    let mousedownPosition = {
+        x: 0,
+        y: 0
+    }
+    let mouseupPosition = {
+        x: 0,
+        y: 0
+    }
+    let totalX = (wheel.height*3.6).toFixed(0)
+    let wheelAngle = 0
+    let timer1
+
+    const mouseupHandler = function(e) {
+        mouseupPosition.x = e.clientX
+        mouseupPosition.y = e.clientY
+        console.log("退出>>"+mouseupPosition.x, mouseupPosition.y)
+        wheel.removeEventListener('mousemove', mousemoveHandler)
+        console.log("最后鼠标移动到的位置>>>"+mousemovePosition.x, mousemovePosition.y+"<<<");
+        console.log("totalX-mousemovePositionX>>>"+(totalX-mousemovePosition.x)+"<<<");
+        if(mouseupPosition.x-mousedownPosition.x>0){
+            console.log("deg>>"+wheelAngle);
+            wheelAngle+= (((mouseupPosition.x-mousedownPosition.x)/totalX)*360)
+            wheel.style.transform = `scale(3.6) translateY(32%) rotate(${wheelAngle}deg)`
+        }else if(mouseupPosition.x-mousedownPosition.x<0){
+            console.log("deg>>"+wheelAngle);
+            wheelAngle+= (((mouseupPosition.x-mousedownPosition.x)/totalX)*360)
+            wheel.style.transform = `scale(3.6) translateY(32%) rotate(${wheelAngle}deg)`
+        }
+    }
+
+    const mousedownHandler = function(e) {
+        mousedownPosition.x = e.clientX
+        mousedownPosition.y = e.clientY
+        console.log("进入>>"+mousedownPosition.x, mousedownPosition.y)
+        wheel.addEventListener('mousemove', mousemoveHandler)
+    }
+
+    const mousemoveHandler = function(e) {
+        if(timer1){
+            timer1 = null
+            mousemoveHandler(e)
+        }else{
+            timer1 = setTimeout(() => {
+                mousemovePosition.x = e.clientX
+                mousemovePosition.y = e.clientY
+            },200)
+        }
+    }
+
+    wheel.addEventListener('mousedown', mousedownHandler)
+    wheel.addEventListener('mouseup', mouseupHandler)
+</script>
+</html>

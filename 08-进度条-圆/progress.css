@@ -1,0 +1,216 @@
+@keyframes progress {
+0%{background:conic-gradient(#67C6E3 0%, transparent 0%);}
+1%{background:conic-gradient(#67C6E3 1%, transparent 1%);}
+2%{background:conic-gradient(#67C6E3 2%, transparent 2%);}
+3%{background:conic-gradient(#67C6E3 3%, transparent 3%);}
+4%{background:conic-gradient(#67C6E3 4%, transparent 4%);}
+5%{background:conic-gradient(#67C6E3 5%, transparent 5%);}
+6%{background:conic-gradient(#67C6E3 6%, transparent 6%);}
+7%{background:conic-gradient(#67C6E3 7%, transparent 7%);}
+8%{background:conic-gradient(#67C6E3 8%, transparent 8%);}
+9%{background:conic-gradient(#67C6E3 9%, transparent 9%);}
+10%{background:conic-gradient(#67C6E3 10%, transparent 10%);}
+11%{background:conic-gradient(#67C6E3 11%, transparent 11%);}
+12%{background:conic-gradient(#67C6E3 12%, transparent 12%);}
+13%{background:conic-gradient(#67C6E3 13%, transparent 13%);}
+14%{background:conic-gradient(#67C6E3 14%, transparent 14%);}
+15%{background:conic-gradient(#67C6E3 15%, transparent 15%);}
+16%{background:conic-gradient(#67C6E3 16%, transparent 16%);}
+17%{background:conic-gradient(#67C6E3 17%, transparent 17%);}
+18%{background:conic-gradient(#67C6E3 18%, transparent 18%);}
+19%{background:conic-gradient(#67C6E3 19%, transparent 19%);}
+20%{background:conic-gradient(#67C6E3 20%, transparent 20%);}
+21%{background:conic-gradient(#67C6E3 21%, transparent 21%);}
+22%{background:conic-gradient(#67C6E3 22%, transparent 22%);}
+23%{background:conic-gradient(#67C6E3 23%, transparent 23%);}
+24%{background:conic-gradient(#67C6E3 24%, transparent 24%);}
+25%{background:conic-gradient(#67C6E3 25%, transparent 25%);}
+26%{background:conic-gradient(#67C6E3 26%, transparent 26%);}
+27%{background:conic-gradient(#67C6E3 27%, transparent 27%);}
+28%{background:conic-gradient(#67C6E3 28%, transparent 28%);}
+29%{background:conic-gradient(#67C6E3 29%, transparent 29%);}
+30%{background:conic-gradient(#67C6E3 30%, transparent 30%);}
+31%{background:conic-gradient(#67C6E3 31%, transparent 31%);}
+32%{background:conic-gradient(#67C6E3 32%, transparent 32%);}
+33%{background:conic-gradient(#67C6E3 33%, transparent 33%);}
+34%{background:conic-gradient(#67C6E3 34%, transparent 34%);}
+35%{background:conic-gradient(#67C6E3 35%, transparent 35%);}
+36%{background:conic-gradient(#67C6E3 36%, transparent 36%);}
+37%{background:conic-gradient(#67C6E3 37%, transparent 37%);}
+38%{background:conic-gradient(#67C6E3 38%, transparent 38%);}
+39%{background:conic-gradient(#67C6E3 39%, transparent 39%);}
+40%{background:conic-gradient(#67C6E3 40%, transparent 40%);}
+41%{background:conic-gradient(#67C6E3 41%, transparent 41%);}
+42%{background:conic-gradient(#67C6E3 42%, transparent 42%);}
+43%{background:conic-gradient(#67C6E3 43%, transparent 43%);}
+44%{background:conic-gradient(#67C6E3 44%, transparent 44%);}
+45%{background:conic-gradient(#67C6E3 45%, transparent 45%);}
+46%{background:conic-gradient(#67C6E3 46%, transparent 46%);}
+47%{background:conic-gradient(#67C6E3 47%, transparent 47%);}
+48%{background:conic-gradient(#67C6E3 48%, transparent 48%);}
+49%{background:conic-gradient(#67C6E3 49%, transparent 49%);}
+50%{background:conic-gradient(#67C6E3 50%, transparent 50%);}
+51%{background:conic-gradient(#67C6E3 51%, transparent 51%);}
+52%{background:conic-gradient(#67C6E3 52%, transparent 52%);}
+53%{background:conic-gradient(#67C6E3 53%, transparent 53%);}
+54%{background:conic-gradient(#67C6E3 54%, transparent 54%);}
+55%{background:conic-gradient(#67C6E3 55%, transparent 55%);}
+56%{background:conic-gradient(#67C6E3 56%, transparent 56%);}
+57%{background:conic-gradient(#67C6E3 57%, transparent 57%);}
+58%{background:conic-gradient(#67C6E3 58%, transparent 58%);}
+59%{background:conic-gradient(#67C6E3 59%, transparent 59%);}
+60%{background:conic-gradient(#67C6E3 60%, transparent 60%);}
+61%{background:conic-gradient(#67C6E3 61%, transparent 61%);}
+62%{background:conic-gradient(#67C6E3 62%, transparent 62%);}
+63%{background:conic-gradient(#67C6E3 63%, transparent 63%);}
+64%{background:conic-gradient(#67C6E3 64%, transparent 64%);}
+65%{background:conic-gradient(#67C6E3 65%, transparent 65%);}
+66%{background:conic-gradient(#67C6E3 66%, transparent 66%);}
+67%{background:conic-gradient(#67C6E3 67%, transparent 67%);}
+68%{background:conic-gradient(#67C6E3 68%, transparent 68%);}
+69%{background:conic-gradient(#67C6E3 69%, transparent 69%);}
+70%{background:conic-gradient(#67C6E3 70%, transparent 70%);}
+71%{background:conic-gradient(#67C6E3 71%, transparent 71%);}
+72%{background:conic-gradient(#67C6E3 72%, transparent 72%);}
+73%{background:conic-gradient(#67C6E3 73%, transparent 73%);}
+74%{background:conic-gradient(#67C6E3 74%, transparent 74%);}
+75%{background:conic-gradient(#67C6E3 75%, transparent 75%);}
+76%{background:conic-gradient(#67C6E3 76%, transparent 76%);}
+77%{background:conic-gradient(#67C6E3 77%, transparent 77%);}
+78%{background:conic-gradient(#67C6E3 78%, transparent 78%);}
+79%{background:conic-gradient(#67C6E3 79%, transparent 79%);}
+80%{background:conic-gradient(#67C6E3 80%, transparent 80%);}
+81%{background:conic-gradient(#67C6E3 81%, transparent 81%);}
+82%{background:conic-gradient(#67C6E3 82%, transparent 82%);}
+83%{background:conic-gradient(#67C6E3 83%, transparent 83%);}
+84%{background:conic-gradient(#67C6E3 84%, transparent 84%);}
+85%{background:conic-gradient(#67C6E3 85%, transparent 85%);}
+86%{background:conic-gradient(#67C6E3 86%, transparent 86%);}
+87%{background:conic-gradient(#67C6E3 87%, transparent 87%);}
+88%{background:conic-gradient(#67C6E3 88%, transparent 88%);}
+89%{background:conic-gradient(#67C6E3 89%, transparent 89%);}
+90%{background:conic-gradient(#67C6E3 90%, transparent 90%);}
+91%{background:conic-gradient(#67C6E3 91%, transparent 91%);}
+92%{background:conic-gradient(#67C6E3 92%, transparent 92%);}
+93%{background:conic-gradient(#67C6E3 93%, transparent 93%);}
+94%{background:conic-gradient(#67C6E3 94%, transparent 94%);}
+95%{background:conic-gradient(#67C6E3 95%, transparent 95%);}
+96%{background:conic-gradient(#67C6E3 96%, transparent 96%);}
+97%{background:conic-gradient(#67C6E3 97%, transparent 97%);}
+98%{background:conic-gradient(#67C6E3 98%, transparent 98%);}
+99%{background:conic-gradient(#67C6E3 99%, transparent 99%);}
+100%{background:conic-gradient(#67C6E3 100%, transparent 100%);}
+}
+@keyframes progress01 { 
+0%{content: '0%';}
+1%{content: '1%';}
+2%{content: '2%';}
+3%{content: '3%';}
+4%{content: '4%';}
+5%{content: '5%';}
+6%{content: '6%';}
+7%{content: '7%';}
+8%{content: '8%';}
+9%{content: '9%';}
+10%{content: '10%';}
+11%{content: '11%';}
+12%{content: '12%';}
+13%{content: '13%';}
+14%{content: '14%';}
+15%{content: '15%';}
+16%{content: '16%';}
+17%{content: '17%';}
+18%{content: '18%';}
+19%{content: '19%';}
+20%{content: '20%';}
+21%{content: '21%';}
+22%{content: '22%';}
+23%{content: '23%';}
+24%{content: '24%';}
+25%{content: '25%';}
+26%{content: '26%';}
+27%{content: '27%';}
+28%{content: '28%';}
+29%{content: '29%';}
+30%{content: '30%';}
+31%{content: '31%';}
+32%{content: '32%';}
+33%{content: '33%';}
+34%{content: '34%';}
+35%{content: '35%';}
+36%{content: '36%';}
+37%{content: '37%';}
+38%{content: '38%';}
+39%{content: '39%';}
+40%{content: '40%';}
+41%{content: '41%';}
+42%{content: '42%';}
+43%{content: '43%';}
+44%{content: '44%';}
+45%{content: '45%';}
+46%{content: '46%';}
+47%{content: '47%';}
+48%{content: '48%';}
+49%{content: '49%';}
+50%{content: '50%';}
+51%{content: '51%';}
+52%{content: '52%';}
+53%{content: '53%';}
+54%{content: '54%';}
+55%{content: '55%';}
+56%{content: '56%';}
+57%{content: '57%';}
+58%{content: '58%';}
+59%{content: '59%';}
+60%{content: '60%';}
+61%{content: '61%';}
+62%{content: '62%';}
+63%{content: '63%';}
+64%{content: '64%';}
+65%{content: '65%';}
+66%{content: '66%';}
+67%{content: '67%';}
+68%{content: '68%';}
+69%{content: '69%';}
+70%{content: '70%';}
+71%{content: '71%';}
+72%{content: '72%';}
+73%{content: '73%';}
+74%{content: '74%';}
+75%{content: '75%';}
+76%{content: '76%';}
+77%{content: '77%';}
+78%{content: '78%';}
+79%{content: '79%';}
+80%{content: '80%';}
+81%{content: '81%';}
+82%{content: '82%';}
+83%{content: '83%';}
+84%{content: '84%';}
+85%{content: '85%';}
+86%{content: '86%';}
+87%{content: '87%';}
+88%{content: '88%';}
+89%{content: '89%';}
+90%{content: '90%';}
+91%{content: '91%';}
+92%{content: '92%';}
+93%{content: '93%';}
+94%{content: '94%';}
+95%{content: '95%';}
+96%{content: '96%';}
+97%{content: '97%';}
+98%{content: '98%';}
+99%{content: '99%';}
+100%{content: '100%';}
+}
+@keyframes progress02 {
+    to{
+        transform: rotate(0deg);
+    }
+}
+@keyframes progress03 {
+    to{
+        transform: rotate(0deg);
+    }
+}

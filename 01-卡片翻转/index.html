@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>卡片翻转</title>
+</head>
+<style>
+    .card-container {
+        margin: 200px auto;
+        width: 240px;
+        height: 400px;
+        background-color: transparent;
+        z-index: 200;
+    }
+
+    .card {
+        color: white;
+        font-size: 50px;
+        font-weight: bolder;
+        width: 240px;
+        height: 400px;
+        background-color: transparent;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        border-radius: 15px;
+        transform-style: preserve-3d;
+        transition: .5s;
+        z-index: 2;
+    }
+
+    .front {
+        text-align: center;
+        border-radius: 15px;
+        line-height: 400px;
+        position: absolute;
+        width: 100%;
+        transform-style: preserve-3d;
+        background-color: #35374B;
+        height: 100%;
+        backface-visibility: hidden;
+        z-index: 1;
+    }
+
+    .back {
+        position: absolute;
+        border-radius: 15px;
+        text-align: center;
+        line-height: 400px;
+        background-image: url(./assets/1.jpg);
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        transform: rotateY(180deg);
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        z-index: 0;
+    }
+
+    @keyframes rotate {
+        to {
+            transform: rotate(45deg);
+        }
+    }
+</style>
+
+<body>
+    <div class="card-container">
+        <div class="card">
+            <div class="front">我是谁？</div>
+            <div class="back">冲田总司</div>
+        </div>
+    </div>
+    <script>
+        const card = document.querySelector(".card")
+        const front = document.querySelector(".front")
+        let timer
+        const mouseListener = () => {
+            if (timer) {
+                timer = null
+                mouseListener()
+            } else {
+                timer = setTimeout(function () {
+                    card.style.transform = "rotateX(10deg) rotateY(180deg)  translateY(-20px)"
+                }, 100)
+            }
+        }
+
+        card.addEventListener('mouseenter', mouseListener)
+
+        card.addEventListener('mouseleave', function () {
+            this.style.transform = "rotateY(0deg)"
+        })
+
+    </script>
+</body>
+
+
+</html>
