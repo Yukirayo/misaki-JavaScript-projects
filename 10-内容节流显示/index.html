@@ -1,10 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>内容节流显示</title>
 </head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+    }
+
+    .container {
+        background-image: url(./assets/9.jpg);
+        height: 2400px;
+        overflow: hidden;
+    }
+
+    .item1 {
+        overflow: hidden;
+        font-size: 40px;
+        font-weight: 600;
+        color: white;
+        text-align: center;
+        line-height: 400px;
+        border-radius: 15px;
+        margin: 20px auto;
+        width: 600px;
+        height: 400px;
+        background-image: url(./assets/1.jpg);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        transition: all 0.4s linear;
+        opacity: 1;
+    }
+
+    .item2 {
+        margin-top: 300px;
+        font-size: 100px;
+        text-align: center;
+        font-weight: 600;
+        background-clip: text;
+        background-image: url(./assets/7.jpg);
+        color: transparent;
+        transition: opacity 0.4s linear;
+    }
+    .item3 {
+        margin-top: 300px;
+        font-size: 100px;
+        text-align: center;
+        font-weight: 600;
+        transition: opacity 0.4s linear;
+    }
+</style>
+
 <body>
-    
+    <div class="container">
+        <div class="item1">有背景元素-划过隐藏背景</div>
+        <div class="item2">测试节流显示</div>
+        <div class="item3">隐藏效果</div>
+    </div>
 </body>
+<script>
+    const container = document.querySelector('.container')
+    const item1 = document.querySelector('.item1')
+    const item2 = document.querySelector('.item2')
+    const item3 = document.querySelector('.item3')
+    let timer
+
+    const hiddenElement = (element, url) => {
+        //带背景图片的元素，将背景图片替换成#333以节省流量
+        //如果不带背景图片，则直接隐藏
+        if (url) {
+            if (element.getBoundingClientRect().top + element.clientHeight < element.clientHeight / 5) {
+                element.style.backgroundImage = `none`
+                element.style.backgroundColor = `#333`
+            } else {
+                element.style.backgroundImage = `url(${url})`
+            }
+        } else {
+            if (element.getBoundingClientRect().top + element.clientHeight < element.clientHeight / 5) {
+                element.style.opacity = 0
+            } else {
+                element.style.opacity = 1
+            }
+        }
+
+    }
+    //滚动事件节流方法
+    const scrollhandle = function () {
+        if (timer) {
+            clearTimeout(timer)
+        }
+        timer = setTimeout(() => {
+            hiddenElement(item1, './assets/1.jpg')
+            hiddenElement(item2, './assets/7.jpg')
+            hiddenElement(item3, null)
+            timer = null
+        }, 20)
+
+    }
+    window.addEventListener('scroll', scrollhandle)
+</script>
+
 </html>
